@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" href="css/initilize.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<script src="lib/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/homepage.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			body,
+			a {
+				font-size: 14px;
+				color: #666;
+			}
+			
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none
+			}
+			
+			.fn-vhid {
+				visibility: hidden;
+			}
+			
+			.fn-tinput {
+				width: 240px;
+				height: 30px;
+				line-height: 30px\9;
+				border: #ddd solid 1px;
+				background-color: transparent;
+				padding: 0 6px;
+			}
+			
+			textarea {
+				border: #ddd solid 1px;
+				background-color: transparent;
+				width: 60%
+			}
+			
+			.fn-tinput:focus,
+			textarea:focus {
+				border-color: #c00;
+			}
+			
+			.bl-form label {
+				float: left;
+				width: 100px;
+				text-align: right;
+				padding-top: 6px;
+			}
+			
+			.bl-form .controls label {
+				width: auto;
+			}
+			
+			.bl-form li {
+				margin-top: 20px;
+				overflow: hidden;
+			}
+			
+			em,
+			strong {
+				color: #C00;
+			}
+			
+			span.error {
+				color: #C00;
+				padding: 0 6px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="header-nav clearFix">
+			<img src="img/header-nav/navlogo.png" class="logo" />
+			<ul class="clearFix memu">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="product.html">产品</a></li>
+				<li><a href="visa.html">签证</a></li>
+				<li><a href="strategy.html">攻略</a></li>
+				<li><a href="custom-made.html" class="hot">量身定制</a></li>
+				<li><a href="contact-us.html">联系我们</a></li>
+				<li class="cur "><a href="login.html" class="login">登录</a></li>
+				<li class="cur current"><a href="sign.html" class="login">注册</a></li>
+			</ul>
+		</div>
+		<div class="login-main section">
+			<div class="login-inner">
+				<form action="js/test.json" method="post" class="bl-form bl-formhor" id="jsForm">
+					<ul>
+						<li class="bl-form-group">
+							<label><em>*</em>必填：</label>
+							<div class="controls">
+								<input id="pwdid" class="fn-tinput" data-rule-remote="http://www.baidu.com" type="password" name="OldPassword" placeholder="原始密码" required data-msg-required="请输入原始密码" minlength="6" data-msg-minlength="至少输入6个字符" />
+							</div>
+						</li>
+
+						<li class="bl-form-group">
+							<label><em>*</em>必填：</label>
+							<div class="controls">
+								<input type="text" value="" name="0" class="fn-tinput" placeholder="大于0" required data-msg-required="不能为空" data-rule-gt="true" data-gt="0" />
+							</div>
+						</li>
+						<li class="bl-form-group">
+							<label><em>*</em>必填：</label>
+							<div class="controls">
+								<input type="text" value="" name="1" class="fn-tinput" placeholder="必填" required data-msg-required="不能为空" />
+							</div>
+						</li>
+						<li class="bl-form-group">
+							<label><em>*</em>Email：</label>
+							<div class="controls">
+								<input type="email" value="" name="2" class="fn-tinput" placeholder="请输入email地址" required data-rule-email="true" data-msg-required="请输入email地址" data-msg-email="请输入正确的email地址" />
+							</div>
+						</li>
+						<li class="bl-form-group">
+							<label>手机：</label>
+							<div class="controls">
+								<input type="text" value="" name="3" class="fn-tinput" placeholder="手机号" required data-rule-mobile="true" data-msg-required="请输入手机号" data-msg-mobile="请输入正确格式" />
+							</div>
+						</li>
+						<li class="bl-form-group">
+							<label>邮箱或手机：</label>
+							<div class="controls">
+								<input type="text" value="" name="4" class="fn-tinput" placeholder="邮箱或手机" required data-rule-mm="true" data-msg-required="请输入邮箱" data-msg-mm="请输入正确格式" />
+							</div>
+						</li>
+						<li class="bl-form-group">
+							<label>数字6-20位：</label>
+							<div class="controls">
+								<input type="text" value="" name="5" class="fn-tinput" placeholder="数字6-20位" required data-rule-number="true" data-msg-required="不能为空" data-msg-number="请输入正确的数字" data-msg-minlength="请输入最小6位" minlength="6" maxlength="20" />
+							</div>
+						</li>
+						<li class="bl-form-group">
+							<label>年龄：</label>
+							<div class="controls">
+								<input type="text" value="" name="6" class="fn-tinput" placeholder="年龄" required data-rule-age="true" data-msg-required="不能为空" data-msg-age="请输入数字" />
+							</div>
+						</li>
+						<li class="bl-form-group">
+							<label>新密码：</label>
+							<div class="controls">
+								<input class="fn-tinput" type="password" name="password" value="" placeholder="新密码" required id="password" data-rule-remote="php.php">
+							</div>
+						</li>
+						<li class="bl-form-group">
+							<label>确认新密码：</label>
+							<div class="controls">
+								<input class="fn-tinput" type="password" name="confirm_password" value="" placeholder="确认新密码" required equalTo="#password">
+							</div>
+						</li>
+						<li class="bl-form-group bl-form-text">
+							<label>单选：</label>
+							<div class="controls">
+								<label><input name="radio1" type="radio" value="" required>置顶</label>
+								<label><input name="radio1" type="radio" value="">推荐</label>
+								<span for="radio1" class="error"></span>
+							</div>
+						</li>
+						<li class="bl-form-group bl-form-text">
+							<label>多选：</label>
+							<div class="controls">
+								<label><input name="checkbox1" type="checkbox" value="" required>黑色</label>
+								<label><input name="checkbox1" type="checkbox" value="">白色</label>
+								<span for="checkbox1" class="error"></span>
+							</div>
+						</li>
+						<li class="bl-form-group">
+							<label>下拉菜单：</label>
+							<div class="controls">
+								<select name="select1" required>
+                    	<option value="">----选择菜单----</option>
+                        <option value="1">菜单1</option>
+                        <option value="2">菜单2</option>
+                        <option value="3">菜单3</option>
+                        <option value="4">菜单4</option>
+                    </select>
+							</div>
+						</li>
+						<li class="bl-form-group">
+							<label>文本域：</label>
+							<div class="controls editor">
+								<textarea name="textarea1" cols="" rows="" required></textarea>
+							</div>
+						</li>
+						<li class="bl-form-group bl-form-btns">
+							<label class="fn-vhid">提交：</label>
+							<div class="controls">
+								<button class="fn-btn btn-primary btn-submit submitBtn" type="submit">提交按钮</button>
+								<button type="reset" class="fn-btn">重置</button>
+							</div>
+						</li>
+					</ul>
+				</form>
+
+			</div>
+		</div>
+
+		<div class="homepage-footer">
+			<div class="footer-info">
+				<div class="section footer-info-inner clearFix">
+					<div class="barcode flt ">
+						<div class="dingyue">
+							<img src="img/footer/dingyuehao2weima.png" />
+							<p>订阅号二维码</p>
+						</div>
+						<div class="fuwu">
+							<img src="img/footer/fuwuhao2weima.png" />
+							<p>服务号二维码</p>
+						</div>
+					</div>
+					<div class="about-us flt">
+						<p>公司资质荣誉&nbsp;首批北京市4A旅行社</p>
+						<p>第十三届首都旅游紫禁杯先进集体&nbsp;&nbsp;</p>
+						<p>第十四届首都旅游紫禁杯先进集体</p>
+						<ul class="clearFix">
+							<li><a href="contact-us.html">关于我们</a></li>
+							<li><a href="contact-us.html#lxwm">联系方式</a></li>
+							<li><a href="contact-us.html#yjfk">投诉建议</a></li>
+							<li><a href="#">合作单位</a></li>
+						</ul>
+					</div>
+					<div class="contact flt">
+						<p>电话：<span>51336808</span></p>
+						<p>邮编：<span>100062</span>&nbsp;传真：<span>51336766</span></p>
+						<p>邮箱：<span>info@newworldtours.cn</span></p>
+						<p>地址：<span>北京市东城区广渠门内大街安化北里1号长保大厦13层</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<p>新世界国旅网版权所有&nbsp;&nbsp;&nbsp;&nbsp;京ICP备12346335号</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				//$('.js-form') 是你的表单的类名或者 id，如果是id的话就是 $('#js-form')
+				//submitHandler 就是表单验证通过的时候执行里面的函数
+				$('.js-form').validate({
+					submitHandler: function(form) {
+						var $form = $(form),
+							data = $form.serialize(); //序列化表单数据
+						//这里是jquery表单验证通过的时候执行的操作，比如这里，表单验证通过的时候执行了jquery的ajax的post操作      
+						/*$.post('js/test.json', {
+							data: data
+						}, function(d) {
+							if (d.Flag) {
+								alert("如果返回为真，将执行这里代码")
+							} else {
+
+							}
+						}, 'json');*/
+					}
+				});
+			})
+		</script>
+	</body>
+
+</html>

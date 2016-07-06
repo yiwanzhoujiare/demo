@@ -1,0 +1,77 @@
+.login-inner {
+	width: 600px;
+	height: 400px;
+	background-color: #fff;
+	margin: 100px auto 0;
+	border-radius: 4px;
+	border: 1px solid #e6e6e6;
+	box-sizing: border-box;
+	box-shadow: 0 2px 2px #e9e9e9;
+	padding: 20px;
+}
+.login-btn{
+	background-color: #d22539;
+	color: #fff;
+	float: left;
+}
+.to-sign , .find-pwd{
+	display: block;
+	height: 50px;
+	width: 200px;
+	border: 1px solid #d22539;
+	border-radius: 4px;
+	box-sizing: border-box;
+	line-height: 50px;
+	text-align: center;
+	/*background-color: #e6e6e6;*/
+	/*margin-top: 20px;*/
+	color: #d22539;
+	float: left;
+}
+.find-pwd{
+	border-color: #e6e6e6;
+	color: #B7B3B3;
+}
+.yzm{
+    display: block;
+    height: 50px;
+    width: 80px;
+    background-color: lightblue;
+    /* float: left; */
+    position: relative;
+    top: -50px;
+    left: 330px;
+}
+fieldset {
+	border: 0;
+}
+
+fieldset legend {
+	display: block;
+	width: 100%;
+	font-size: 16px;
+	font-weight: 700;
+	border-bottom: 1px solid #E6E6E6;
+	padding-bottom: 4px;
+}
+
+fieldset label {
+color: #7C7C7C;
+    width: 86px;
+    display: inline-block;
+    margin-right: 10px;
+    text-align: right;
+}
+
+fieldset p {
+	padding: 5px 20px;
+}
+
+fieldset input{
+	height: 50px;
+	width: 200px;
+	border-color: #E6E6E6;
+	border-radius: 4px;
+	outline: none;
+	padding-left: 10px;
+}

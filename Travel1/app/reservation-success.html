@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>预订成功</title>
+		<link rel="stylesheet" type="text/css" href="css/initilize.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/order.css" />
+		<link rel="stylesheet" type="text/css" href="css/reserve-success.css" />
+		<script src="lib/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/homepage.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/myBannerPlugin_left&opacity.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="reserve-success-wrap">
+			<div class="header-nav clearFix">
+				<img src="img/header-nav/navlogo.png" class="logo" />
+				<ul class="clearFix memu">
+					<li><a href="index.html">首页</a></li>
+					<li class="on"><a href="product.html">产品</a></li>
+					<li><a href="#">签证</a></li>
+					<li><a href="strategy.html">攻略</a></li>
+					<li><a href="custom-made.html" class="hot">量身定制</a></li>
+					<li><a href="contact-us.html">联系我们</a></li>
+					<li class="cur"><a href="#" class="login">登录</a></li>
+					<li class="cur"><a href="#" class="login">注册</a></li>
+				</ul>
+			</div>
+			<div class="progress section">
+				<div class="line  clearFix">
+					<div class="line1">
+						<div class="circle circle1 ">
+							<div class="ball "></div>
+							<span>选择产品</span>
+						</div>
+						<div class="circle circle2">
+							<div class="ball"></div>
+							<span>填写订单</span>
+						</div>
+					</div>
+					<div class="line2">
+						<div class="circle circle3">
+							<div class="ball"></div>
+							<span>预订成功</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="reserve-success-main ">
+				<div class="reserve-success-tip">
+					<img src="img/yudingyemian/yudingchengong.png" />
+					<h2>预订成功！</h2>
+					<p>预订中心的工作人员将尽快联系您，祝您愉快。</p>
+					<p><a href="index.html">&gt;&gt;返回首页</a><span class="count-down">3</span>秒后自动回到首页</p>
+				</div>
+			</div>
+			<div class="homepage-footer">
+				<div class="footer-info">
+					<div class="section footer-info-inner clearFix">
+						<div class="barcode flt ">
+							<div class="dingyue">
+								<img src="img/footer/dingyuehao2weima.png" />
+								<p>订阅号二维码</p>
+							</div>
+							<div class="fuwu">
+								<img src="img/footer/fuwuhao2weima.png" />
+								<p>服务号二维码</p>
+							</div>
+						</div>
+						<div class="about-us flt">
+							<p>公司资质荣誉&nbsp;首批北京市4A旅行社</p>
+							<p>第十三届首都旅游紫禁杯先进集体&nbsp;&nbsp;第十四届首都旅游紫禁杯先进集体</p>
+							<ul class="clearFix">
+								<li><a href="contact-us.html">关于我们</a></li>
+								<li><a href="contact-us.html#lxwm">联系方式</a></li>
+								<li><a href="contact-us.html#yjfk">投诉建议</a></li>
+								<li><a href="#">合作单位</a></li>
+							</ul>
+						</div>
+						<div class="contact flt">
+							<p>电话：<span>51336808</span></p>
+							<p>邮编：<span>100062</span>&nbsp;传真：<span>51336766</span></p>
+							<p>邮箱：<span>info@newworldtours.cn</span></p>
+							<p>地址：<span>北京市东城区广渠门内大街安化北里1号长保大厦13层</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<p>新世界国旅网版权所有&nbsp;&nbsp;&nbsp;&nbsp;京ICP备12346335号</p>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//3秒钟之后跳转到指定的页面 
+			var t = 2; //设定跳转的时间 
+			setInterval("refer()", 1000); //启动1秒定时 
+			function refer() {
+				if (t == 0) {
+					window.location.href = "index.html"; //#设定跳转的链接地址 
+				}
+				$('.count-down').html(t);
+				t--; // 计数器递减 
+			}
+		</script>
+	</body>
+
+</html>

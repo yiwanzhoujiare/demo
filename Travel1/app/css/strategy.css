@@ -1,0 +1,66 @@
+.strategy-bg{
+	width: 100%;
+	height: 400px;
+}
+.strategy-bg img{
+	width: 100%;
+	height: 100%;
+}
+.destination{
+	margin-bottom: 20px;
+}
+.page{
+	height: 60px;
+	background-color: #fff;
+}
+.page ul{
+    float: left;
+    position: relative;
+    left: 50%;
+    margin-top: 19px;
+    width: 695px;
+    margin-left: -347.5px;
+}
+.page ul li{
+    float: left;
+    width: 24px;
+    height: 20px;
+    border: 1px solid #d9d9d9;
+    margin-right: 9px;
+    text-align: center;
+    line-height: 20px;
+    font-family: '黑体';
+}
+.page .pagebtn{
+	width: 48px;
+	background-color: #e6e6e6;
+}
+input{
+	outline: none;
+}
+.page .prev{
+	visibility: hidden;
+}
+.page .sure input{	
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: '黑体';
+}
+.page ul .active{
+	background-color: #cd2f45;
+}
+.page ul .active a{
+	color: #fff;
+}
+.page .jump{
+    width: 100px!important;
+    background-color: transparent!important;
+    border: none!important;
+}
+.page .jump input{
+    width: 38px;
+    height: 18px;
+    border-color: #d9d9d9;
+    
+}

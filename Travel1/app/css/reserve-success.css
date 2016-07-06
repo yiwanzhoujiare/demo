@@ -1,0 +1,35 @@
+.line2 .circle3{	
+	border-color: #CD2F45;
+}
+.line2 .circle3 .ball{
+	background-color: #CD2F45;
+}
+.line .line2{
+	width: 387.5px;
+	background-color: #CD2F45;
+}
+.reserve-success-main{
+	width: 400px;
+	margin: 0 auto 50px;
+}
+.reserve-success-tip{
+	width: 400px;
+    /* height: 200px; */
+    background-color: #fff;   
+    text-align: center;
+    padding: 50PX 0;
+    border-radius: 10px;
+}
+.reserve-success-tip h2{
+	font-size: 20px;
+    padding: 10px 0;
+    color: #CD2F45;
+}
+.reserve-success-tip p:last-child{
+	padding: 30px 0;
+    color: #B3B3B3;
+}
+.reserve-success-tip a{
+	color: #CD2F45;
+    padding-right: 15px;
+}

@@ -1,0 +1,185 @@
+.order-main{
+	height: 600px;
+	/*background-color: lightblue;*/
+	margin-top: 0;
+}
+.progress {
+	position: relative;
+	/*top: 30px;*/
+	height: 50px;
+	margin: 100px auto 20px!important;
+}
+.progress .line{
+	width: 100%;
+	height: 5px;
+	background-color: #E7E7E7;
+	position: relative;
+}
+.line1 , .line2{
+	height: 5px;
+	float: left;
+}
+.line .line1{
+	width: 612.5px;	
+	background-color: #CD2F45;
+}
+.line .line2{
+	width: 387.5px;
+	background-color: #E7E7E7;
+}
+.line1 span, .line2 span{
+	display: block;
+	width: 60px;
+    position: relative;
+    left: -13px;
+    top: 15px;
+}
+.line1 span{
+	color: #CD2F45;
+}
+.line2 span{
+	color: #747474;
+}
+.progress .circle{
+    width: 25px;
+    height: 25px;
+    border: 2px solid #E7E7E7;
+    border-radius: 50%;
+    position: absolute;
+    top: -12px;
+    left: 241.5px;
+    background-color: #f2f2f2;
+    float: left;
+    
+}
+.line1 .circle1, .line1 .circle2{	
+	border-color: #CD2F45;
+}
+.line1 .circle1 .ball,.line1 .circle2 .ball{
+	background-color: #CD2F45;
+}
+.progress .circle2{
+	left: 483px;
+}
+.progress .circle3{
+	left: 724.5px;
+}
+.circle .ball{
+	width: 15px;
+    height: 15px;
+    background-color: #E7E7E7;
+    border-radius: 50%;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+.order-fillin{
+	width: 600px;
+	/*height: 300px;*/	
+	float: left;	
+}
+.order-info{
+	width: 300px;
+	height: 300px;
+	background-color: #FEF8FA;
+	float: right;
+	background-color: #fff;
+	    padding: 10px 10px;
+    box-sizing: border-box;
+    border: 1px solid #E5A5B3;
+}
+.order-info p:last-child{
+	    border-top: 1px solid #E6E6E6;
+}
+.lineman , .travel-line-info, .total {
+	background-color: #fff;
+	width: 600px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+    border: 1px solid #E6E6E6;
+    padding: 10px;
+	
+}
+.travel-line-info p:first-child {
+	color: #CD2F45;
+}
+.lineman {
+	/*height: 200px;*/
+}
+.lineman span{
+	    width: 140px;
+	    
+}
+.lineman i{
+	font-style: normal;
+	color: #CD2F45;
+	    padding-right: 6px;
+}
+.lineman label{
+	    text-align: right;
+	    
+}
+.total{
+	height: 50px;	
+	padding: 0;
+}
+.total p{
+	width: 300px;
+	float: left;
+	line-height: 48px;
+	    padding-left: 10px;
+}
+.total input{
+	float: right;
+	width: 100px;
+    height: 49px;
+    border: none;
+    background-color: #CD2F46;
+    color: #fff;
+    cursor: pointer;
+}
+.total i{
+	font-style: normal;
+}
+.total i ,.total span{
+	color: #CD2F45;
+}
+fieldset{
+	border: 0;
+}
+fieldset legend{
+	display: block;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    border-bottom: 1px solid #E6E6E6;
+    padding-bottom: 4px;
+}
+fieldset label {
+	color: #7C7C7C;
+	width: 70px;
+	display: inline-block;
+	margin-right: 10px;
+}
+fieldset p{
+	padding: 5px 20px;
+
+}
+fieldset input,fieldset textarea{
+	height: 30px;
+    width: 200px;
+    border-color: #E6E6E6;
+}
+fieldset textarea{
+	height: 50px;
+	width: 300px;
+	padding: 10px;
+}
+.dateImg{
+	position: relative;
+    height: 30px;
+    display: block;
+    top: -31px;
+    left: 259px;
+}
