@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>楼层导航+回到顶部+导航固定demo</title>
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			h2 {
+				text-align: center;
+				letter-spacing: 2em;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			.floorNav {
+				width: 60px;
+				position: fixed;
+				top: 50%;
+				left: 50px;
+				margin-top: -30px;
+				text-align: center;
+			}
+			
+			.floorNav li {
+				width: 60px;
+				height: 60px;
+				margin-bottom: 5px;
+				line-height: 60px;
+				border-radius: 10px;
+				background-color: lightslategrey;
+				cursor: pointer;
+			}
+			
+			.floorNav .active {
+				background-color: lightgoldenrodyellow;
+				color: darkblue;
+			}
+			
+			.floorNav li:hover {
+				background-color: lightsalmon;
+			}
+			
+			.floorNav li:hover i {
+				display: none;
+			}
+			
+			.floorNav li:hover strong {
+				display: block;
+				background: darkred;
+				color: white;
+				border-radius: 10px;
+			}
+			
+			.floorNav li span,
+			.floorNav li strong {
+				display: none;
+			}
+			
+			.floorNav li span img {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				position: relative;
+				top: 5px;
+			}
+			
+			.floorNav li:hover span {
+				display: block;
+				position: relative;
+				top: -60px;
+				left: 65px;
+				width: 150px;
+				height: 60px;
+				background-color: darkviolet;
+				color: #fff;
+				border-radius: 10px;
+			}
+			
+			.toTop {
+				width: 60px;
+				position: fixed;
+				right: 10px;
+				bottom: 60px;
+				cursor: pointer;
+			}
+			
+			.toTop strong {
+				display: block;
+				width: 60px;
+				height: 60px;
+				line-height: 60px;
+				border-radius: 10px;
+				text-align: center;
+				background-color: lightgoldenrodyellow;
+				opacity: .7;
+				color: darkblue;
+			}
+			
+			.toTop span,
+			.toTop a {
+				display: none;
+			}
+			
+			.toTop span img {
+				display: block;
+				width: 90px;
+				height: 90px;
+			}
+			
+			.toTop:hover strong {
+				display: none;
+			}
+			
+			.toTop:hover a {
+				display: block;
+				width: 60px;
+				height: 60px;
+				font-size: 14px;
+				line-height: 60px;
+				border-radius: 10px;
+				background: darkred;
+				color: white;
+				word-wrap: break-word;
+				/*opacity: .7;*/
+			}
+			
+			.toTop:hover span {
+				display: block;
+				/*width: 100px;
+				height: 100px;*/
+				padding: 10px;
+				background-color: lightgreen;
+				position: absolute;
+				right: 65px;
+				top: -20px;
+				border-radius: 10px;
+			}
+			
+			.nav {
+				width: 100%;
+				height: 60px;
+				background-color: rgba(255, 255, 255, 0.5);
+				text-align: center;
+				line-height: 60px;
+			}
+			
+			.floorNav,
+			.toTop {
+				display: none;
+			}
+			
+			.container {
+				width: 100%;
+				height: auto;
+			}
+			
+			.fullpage {
+				width: 100%;
+				height: 700px;
+			}
+			
+			.header {
+				width: 100%;
+				height: 300px;
+				background-color: lightblue;
+			}
+			
+			.section-1 {
+				background-color: lightcoral;
+			}
+			
+			.section-2 {
+				background-color: lightgreen;
+			}
+			
+			.section-3 {
+				background-color: lightpink;
+			}
+			
+			.section-4 {
+				background-color: lightsalmon;
+			}
+			
+			.section-5 {
+				background-color: lightseagreen;
+			}
+			
+			.footer {
+				width: 100%;
+				height: 300px;
+				background-color: lightslategray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--start 楼层导航-->
+		<ul id="floorNav" class="floorNav">
+			<li class="active"><i>1F</i><strong>一楼</strong><span>一楼<img src="http://p.qq181.com/cms/1212/2012121221524127738.jpg"/></span></li>
+			<li><i>2F</i><strong>二楼</strong><span>二楼<img src="http://p.qq181.com/cms/1212/2012121221524127738.jpg"/></span></li>
+			<li><i>3F</i><strong>三楼</strong><span>三楼<img src="http://p.qq181.com/cms/1212/2012121221524127738.jpg"/></span></li>
+			<li><i>4F</i><strong>四楼</strong><span>四楼<img src="http://p.qq181.com/cms/1212/2012121221524127738.jpg"/></span></li>
+			<li><i>5F</i><strong>五楼</strong><span>五楼<img src="http://p.qq181.com/cms/1212/2012121221524127738.jpg"/></span></li>
+		</ul>
+		<!--end 楼层导航-->
+		<!--start 回到顶部-->
+		<div id="toTop" class="toTop"><strong>TOP</strong><a href="#">回到顶部</a><span>广告<img src="http://p.qq181.com/cms/1212/2012121221524127738.jpg"/></span></div>
+		<!--end 回到顶部-->
+		<!-- 页面主体 -->
+		<div id="container">
+			<!--start 头部-->
+			<div id="header" class="header">
+				<div class="nav">
+					<h1><a href="javascript:;" target="_blank">头部导航</a></h1></div>
+				<h2>Header</h2>
+			</div>
+			<!--start 内容主体-->
+			<div id="main" class="main">
+				<div class="section section-1 fullpage">
+					<h2>一楼</h2>
+				</div>
+				<div class="section section-2 fullpage">
+					<h2>二楼</h2>
+				</div>
+				<div class="section section-3 fullpage">
+					<h2>三楼</h2>
+				</div>
+				<div class="section section-4 fullpage">
+					<h2>四楼</h2>
+				</div>
+				<div class="section section-5 fullpage">
+					<h2>五楼</h2>
+				</div>
+			</div>
+			<!--start 页脚-->
+			<div id="footer" class="footer">
+				<h2>页脚</h2>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				var $win = $(window);
+				$win.scroll(function() {
+					flrAndTop(2);
+					processScroll();
+				});
+				//鼠标滑动到一个阶段导航固定
+				var $nav = $('.nav'); //导航
+				var mainOffsetTop = $('.main').offset().top;
+				var isFixed = 0;
+				processScroll();
+
+				function processScroll() {
+					var i, scrollTop = $win.scrollTop();
+					if (scrollTop >= mainOffsetTop && !isFixed) {
+						isFixed = 1;
+						$nav.css({
+							'position': 'fixed',
+							'top': 0
+						});
+					} else if (scrollTop <= mainOffsetTop && isFixed) {
+						isFixed = 0;
+						$nav.css({
+							'position': 'relative'
+						});;
+					}
+				}
+				//楼层导航
+				function flrAndTop(n) {
+					var winH = $win.height();
+					var scrT = $win.scrollTop();
+					if (scrT >= $('#header').height()) {
+						$('#floorNav').fadeIn();
+						$('#toTop').fadeIn();
+						$('.section').each(function() {
+							//动态跟随楼层显示样式
+							if (winH + scrT - $(this).offset().top > winH / n) {
+								$('#floorNav').find('li').eq($(this).index()).addClass('active').siblings().removeClass('active');
+							}
+						})
+					} else {
+						$('#floorNav').fadeOut();
+						$('#toTop').fadeOut();
+					}
+				}
+				//鼠标点击回到顶部
+				$('#toTop').on('click', function() {
+					$('body,html').animate({
+						'scrollTop': 0
+					}, 500);
+				});
+				//点击楼层导航，回到相应的楼层，对应的楼层导航添加样式其他移除
+				$('#floorNav').on('click', 'li', function() {
+					var t = $('.section').eq($(this).index()).offset().top;
+					$('body,html').animate({
+						'scrollTop': t
+					}, 500)
+					$(this).addClass('active').siblings().removeClass('active');
+				});
+
+			})
+		</script>
+	</body>
+
+</html>
