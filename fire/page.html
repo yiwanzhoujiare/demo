@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Angularjs+php连接数据库获取数据并显示在页面上</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<style type="text/css">
+			.fixed {
+				position: fixed;
+				bottom: 40px;
+			}
+		</style>
+	</head>
+
+	<body ng-app="pageApp" ng-controller="pageCtrl">
+		<div class="col-md-6 col-md-offset-3">
+			<table class="table table-bordered table-striped table-hover">
+				<caption>器材表单分页查询</caption>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>器材名称</th>
+						<th>成本价</th>
+						<th>供应商</th>
+						<th>日期</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="i in listQiCai" ng-click="test($event)">
+						<td>{{i.id}}</td>
+						<td>{{i.name}}</td>
+						<td>{{i.price}}</td>
+						<td>{{i.gname}}</td>
+						<td>{{i.qdate}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="col-md-6 col-md-offset-3 text-center fixed">
+			<nav>
+				<ul class="pagination text-center">
+					<li ng-class="{0:'disabled'}[page.prev]">
+						<a aria-label="Previous" ng-click="changePage(page.prev)" href="#">
+							<span aria-hidden="true">上一页</span>
+						</a>
+					</li>
+					<li ng-repeat="i in pages track by $index" ng-class="{true:'active'}[$index+1 == page.now]">
+						<a ng-click="changePage($index+1)">{{$index + 1}}</a>
+					</li>
+					<li ng-class="{0:'disabled'}[page.next]">
+						<a aria-label="Next" ng-click="changePage(page.next)" href="#">
+							<span aria-hidden="true">下一页</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<script type="text/javascript" src="js/angularjs-1.3.9.js"></script>
+		<script>
+			var pages = {
+				now: 1,
+				next: 2,
+				//一共六张
+				prev: 6
+			};
+			angular.module("pageApp", [])
+				.controller("pageCtrl", function($scope, $http) {
+					//通过page对象 记录页码的情况
+					$scope.page = {
+						now: 1,
+						size: 5,
+						next: 2,
+						prev: 0,
+						all: 0
+					};
+					$http.get("qicailist.php")
+						.success(function(d) {
+							var pages = Math.ceil(d / 5);
+							$scope.page.all = pages; //6
+							$scope.pages = new Array(pages);
+						});
+					changePage($scope.page.now);
+					$scope.changePage = changePage;
+					/**
+					 * 	改变当前页面显示的数据
+					 * 
+					 * @param {Object} pageNumber
+					 * @param {Object} size
+					 */
+					function changePage(pageNumber, size) {
+						size = size || 5;
+						$http.get("qicaipage.php?p=" + pageNumber + "&s=" + size)
+							.success(function(d) {
+								$scope.listQiCai = d;
+								//更新页码
+								updatePage(pageNumber);
+							});
+					}
+					/**
+					 * 	更新 page 对象
+					 */
+					function updatePage(pageNumber) {
+						$scope.page.now = pageNumber;
+						//判断下一页是否超出总页数
+						$scope.page.next = pageNumber + 1;
+						//当下一页的值超出总页数时, 使下一页的值变为0
+						if ($scope.page.next > $scope.page.all) {
+							$scope.page.next = 0;
+						}
+						$scope.page.prev = pageNumber - 1;
+					}
+					$scope.test = function(e) {
+						console.log(this.$$watchers)
+					}
+				});
+		</script>
+	</body>
+
+</html>
