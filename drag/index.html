@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>鼠标拖拽图片</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				background-color: #eee;
+			}
+			
+			.clearFix:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			
+			.left,
+			.right {
+				height: 1000px;
+				width: 500px;
+				margin: 30px;
+				border: 1px dashed #000;
+				float: left;
+				position: relative;
+				padding: 10px;
+			}
+			
+			img {
+				width: 114px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap clearFix">
+			<div class="left" id="left">
+				<img src="img/i1.jpg" alt="" />
+				<img src="img/i2.jpg" alt="" />
+				<img src="img/i3.jpg" alt="" />
+				<img src="img/i4.jpg" alt="" />
+				<img src="img/i5.jpg" alt="" />
+				<img src="img/i6.jpg" alt="" />
+				<img src="img/i7.jpg" alt="" />
+				<img src="img/i8.jpg" alt="" />
+				<img src="img/i9.jpg" alt="" />
+				<img src="img/i10.jpg" alt="" />
+			</div>
+			<div class="right" id="right"></div>
+		</div>
+		<script>
+			window.onload = function() {
+				drag(10,10);
+			}
+			var left = document.getElementById("left");
+			var right = document.getElementById("right");
+			var oImg = document.getElementsByTagName("img");
+			var arrImg = null; //用于存放拖拽的函数
+			function drag(mh, mv) {
+				//获取页面和一个图片宽度
+				var rightW = right.offsetWidth;
+				var imgW = oImg[0].offsetWidth+mh;
+				
+				
+				//给左侧容器添加事件委托
+				left.ondragstart = function(e) {
+					var img = e.target;
+					arrImg = img;
+				}
+				right.ondragover = function(e) {
+					e.preventDefault();
+				}
+				var cols = Math.floor(rightW/imgW);
+//				var cols = 4;
+				//初始化话瀑布流布局数据
+				var arrHeight=(function () {
+					var arr=[];
+					for (var i=0;i<cols;i++) {
+						arr.push(0);
+					}
+					return arr;
+				})();
+				var arrLeft=(function () {
+					var arr=[];
+					for (var i=0;i<cols;i++) {
+						arr.push((114+mh)*i);
+					}
+					return arr;
+				})();
+				right.ondrop = function() {
+					arrImg.style.position="absolute";
+					var minColH = getMinData(arrHeight);
+					arrImg.style.top=minColH.minHeight+'px';
+					arrImg.style.left=arrLeft[minColH.minIndex]+'px';
+					//更新最矮高度列的数据
+					arrHeight[minColH.minIndex]+=arrImg.offsetHeight+mv;
+					right.appendChild(arrImg);
+//					right.style.padding=(rightW-cols*imgW)/2+'px';
+					arrImg=null;
+				}
+				
+				function getMinData(arr) {
+				var minIndex=0;
+				var minHeight=arr[0];
+				arr.map(function (d,i) {
+					if (d<minHeight) {
+						minHeight=d;
+						minIndex=i;
+					} 
+				});
+				return {
+					minHeight:minHeight,
+					minIndex:minIndex
+				}
+			}
+			}
+
+
+			
+		</script>
+	</body>
+
+</html>
