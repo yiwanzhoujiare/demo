@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>刮刮乐</title>
+    <style>
+        .demo {
+            width: 320px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div class="demo">
+        <canvas></canvas>
+    </div>
+</div>
+<script>
+    //不让页面被选择
+   /* var bodyStyle = document.body.style;
+    console.log(bodyStyle);//CSS样式
+    bodyStyle.mozUserSelect = "none";//子元素所有的文字都不能选择，包括input输入框中的文字也不能选择。 不让页面进行选择，这是很多网站不让复制采用的方法。
+    bodyStyle.webkitUserSelect = "none";*/
+
+    var image = new Image();//创建图片实例
+    var canvas = document.querySelector("canvas");//获取画布
+    canvas.style.position = "absolute";//画布绝对定位
+    var images = ["p_0.jpg","p_1.jpg"];//多张背景图片放在一组数组当中
+    var num = Math.floor(Math.random()*images.length);//根据背景图片数量进行随机取整数
+    if(num>0) {//0<num<2
+        image.src = images[0];
+    }else {//num=0
+        image.src = images[1];
+    }
+    //背景图片加载完毕事件
+    image.addEventListener("load",function(e) {
+        //创建一个ctx
+        var ctx;
+        var w = image.width;//获取图片宽度w
+        var h = image.height;//获取图片高度h
+        var offsetX = canvas.offsetLeft;//获取画布距页面左侧距离(左偏移量)
+        var offsetY = canvas.offsetTop;//获取画布距页面顶部距离(上偏移量)
+        //当鼠标按下，有一个flag值，它会有true 和 false
+        var flag = false;
+        //鼠标按下/开始触摸事件
+        function eventDown() {
+            e.preventDefault();//阻止默认行为
+            flag = true;
+        }
+        //鼠标按下后抬起/触摸结束事件
+        function eventUp() {
+            e.preventDefault();//阻止默认行为
+            flag = false;
+        }
+        //鼠标按住移动/触摸按住移动事件
+        function eventMove(e) {
+            e.preventDefault();//阻止默认行为
+            if(flag) {
+                if(e.changedTouches) {//changedTouches获取手势操作的对象(几根手指?)
+                    e = e.changedTouches[e.changedTouches.length-1];
+                }
+                //clientX当事件被触发时鼠标指针相对于浏览器页面的水平坐标,以滚动条滚动到的位置为参考点,不随页面滚动而改变
+                //pageX/Y获取到的是触发点(鼠标)相对文档区域左上角距离，以页面左侧为参考点,会随着页面滚动而改变
+                //当有滚动条时   clientX  小于  pageX
+                //document.body.scrollLeft 设置或获取位于对象左边界和窗口中目前可见内容的最左端之间的距离。
+                //document.body.scrollTop 设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离
+
+                //offsetX/Y 判断鼠标点在一个元素中的哪个位置,鼠标相对于“触发事件的元素”的位置，从内容区域左上角开始定位
+                /*
+                * PageY=clientY+scrollTop-clientTop;(只讨论Y轴,X轴同理,下同)
+                * 页面上的位置=可视区域位置+页面滚动条切去高度-自身border高度
+                * */
+                var x = (e.clientX+document.body.scrollLeft || e.pageX)-offsetX;
+                var y = (e.clientY+document.body.scrollTop || e.pageY)-offsetY;
+                with (ctx){//判断当前对象
+                    beginPath();
+                    arc(x,y,20,0,Math.PI*2);
+                    fill();
+//                    closePath();
+                }
+            }
+        }
+        //遮盖层样式
+        function layout(ctx) {
+            ctx.fillStyle = "gray";
+            ctx.fillRect(0,0,w,h);//遮盖层起始点为(0,0)点，宽为图片宽度x，高为图片高度y(遮盖层大小依据图片大小)
+        }
+        //start 操作canvas
+        canvas.width = w;//画布宽度
+        canvas.height = h;//画布高度
+        canvas.style.backgroundImage = "url("+image.src+")";//画布背景图片
+        ctx = canvas.getContext("2d");//必需
+        ctx.fillRect(0,0,w,h);//画布起始点为(0,0)点，宽为图片宽度x，高为图片高度y(画布大小依据图片大小)
+        //画布中的遮盖层样式
+        layout(ctx);
+        //遮盖行为
+        ctx.globalCompositeOperation = "destination-out";
+        //画布事件
+        canvas.addEventListener("mousedown",eventDown);
+        canvas.addEventListener("mouseup",eventUp);
+        canvas.addEventListener("mousemove",eventMove);
+        canvas.addEventListener("touchstart",eventDown);
+        canvas.addEventListener("touchend",eventUp);
+        canvas.addEventListener("touchmove",eventMove);
+        //end 操作canvas
+    },false);
+</script>
+</body>
+</html>
