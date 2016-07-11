@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>文本延时加载</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: lightcoral;
+            margin-top: 1000px;
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        我没有完全加载出来我就不显示
+    </div>
+    <script>
+        //元素的偏移量封装函数
+        function offset(ele) {
+            var l = ele.offsetLeft;//相对于父级的左偏移量
+            var t = ele.offsetTop;
+            var parent = ele.offsetParent;//获取元素父级的偏移量
+            l+=parent.offsetLeft + parent.clientLeft;
+            t+=parent.offsetTop + parent.clientTop;
+            return{left:l,top:t}
+        }
+        var div = document.querySelector("div");
+        //获取div的偏移量
+        var divH = offset(div).top + div.offsetHeight;
+//        var p = document.querySelector("p");
+        window.onscroll = function() {
+            //滚动的值+当前页面显示的高度 > 元素距离顶端的值
+            var winH = (document.documentElement.scrollTop || document.body.scrollTop)+(document.documentElement.clientHeight|| document.body.clientHeight)
+            if(winH>divH) {
+                div.innerHTML = "加载完成";
+            }
+        }
+
+    </script>
+</body>
+</html>
