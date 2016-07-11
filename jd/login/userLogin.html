@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用户登录页面</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="initilize.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="userLogin.css"/>
+    <link rel="short icon" href="img/logo.ico">
+    <script src="jquery-2.2.3.js" ></script>
+    <script src="angularJS-1.3.9.js"></script>
+</head>
+<body>
+<div class="userLogin">
+    <header>
+        <i onclick="javascript:window.history.back(-1)"></i>
+        <span>京东登录</span>
+    </header>
+    <section>
+        <div class="zhuTi">
+            <form name="f">
+                <div class="myInput"><input type="text" class="userName"  placeholder="用户名/邮箱/已验证手机" name="username" value=""><i class="i1"></i></div>
+                <div class="myInput"><input type="text" class="password"  placeholder="请输入密码" name="pwd" value=""><i class="i3"></i></div>
+                <div class="myBtn">
+                    <span class="abc">abc</span>
+                    <span class="dian">...</span>
+                    <p></p>
+                </div>
+                <div class="myInput"><input type="text" class="yzm"  placeholder="请输入验证码" name="yzm" value=""><i class="i4"></i></div>
+                <i class="i2"></i>
+            </form>
+            <div class="dengLu"><input class="btn btn-default dLu" type="submit" value="登 录"></div>
+            <div class="mdl"><i class="i6"></i>一个月内免登录</div>
+            <div class="mmzc clearFix">
+                <div class="zmm"><i></i><a href="#">找回密码</a></div>
+                <div class="zhc"><i></i><a href="register.html">快速注册</a></div>
+            </div>
+            <div class="qtdl"><span>其他方式登录</span></div>
+            <div class="qq"><i></i><p>QQ</p></div>
+        </div>
+    </section>
+</div>
+<script src="userlogin.js"></script>
+</body>
+</html>

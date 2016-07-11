@@ -1,0 +1,70 @@
+body{
+    background-color: #F4F4F4;
+    min-width: 300px;
+    width: 100%;
+}
+section{
+    width: 100%;
+    padding-top: 65%;
+    background: url("img/unlogin.png") no-repeat center center;
+    background-size: 96px 95px;
+    text-align: center;
+    font-size: 15px;
+}
+section p{
+    margin-bottom: 20px;
+    color: #888;
+}
+section a{
+    display: inline-block;
+    margin: 0 auto;
+    color: #47b34f;
+    border: 1px solid #47b34f;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+
+.gwc footer{
+    width: 100%;
+    background-color: #ffffff;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    text-align: center;
+    border-top: 1px solid #d9d9d9;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+footer a{
+    height: 20px;
+    -webkit-box-flex: 1;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 17px;
+    padding-top: 30px;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+footer .shy{
+    background: url("img/nav2.png") no-repeat 50% -223px;
+    background-size: 20px;
+}
+footer .fey{
+    background: url("img/nav2.png") no-repeat 50% -267px;
+    background-size: 20px;
+}
+footer .gwc{
+    background: url("img/nav2.png") no-repeat 50% -87px;
+    background-size: 20px;
+}
+footer .did{
+    background: url("img/nav2.png") no-repeat 50% -361px;
+    background-size: 20px;
+}
+footer .mine{
+    background: url("img/nav2.png") no-repeat 50% -406px;
+    background-size: 20px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用户注册页面</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="initilize.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="register.css"/>
+    <link rel="short icon" href="img/logo.ico">
+    <script src="jquery-2.2.3.js" ></script>
+    <script src="angularJS-1.3.9.js"></script>
+</head>
+<body>
+<div class="register userLogin">
+    <header>
+        <i onclick="javascript:window.history.back(-1)"></i>
+        <span>京东注册</span>
+    </header>
+    <section>
+        <div class="zhuTi">
+            <form name="f">
+                <div class="myInput"><input type="text" class="yzm"  placeholder="请输入验证码" name="yzm" value=""><i class="i1"></i></div>
+                <i class="i2"></i>
+                <div class="myInput getxx"><input type="text" class="password"  placeholder="请输入手机号" name="username" value=""><i class="i3"></i>
+                	<span class="sp1"></span> 
+                	<input class="btn btn-default xx" value="获取短信验证码">
+                </div>
+                <div class="myInput"><input type="text" class="dx"  placeholder="请输入短信验证码" name="sjdx" value=""><i class="i4"></i></div>
+                <div class="myInput"><input type="text" class="userName"  placeholder="请设置6-20位登录密码" name="pwd" value=""><i class="i5"></i></div>
+                <div class="myBtn">
+                    <span class="abc">abc</span>
+                    <span class="dian">...</span>
+                    <p></p>
+                </div>
+            </form>
+            <div class="dengLu"><input class="btn btn-default dLu" type="submit" value="注 册"></div>
+            <div class="xieyi">注册即视为同意
+            	<a href="https://static.jdpay.com/activity/html/app-agreement.html">
+            		《京东用户注册协议》
+            	</a></div>
+        </div>
+    </section>
+</div>
+<script src="register.js"></script>
+</body>
+</html>

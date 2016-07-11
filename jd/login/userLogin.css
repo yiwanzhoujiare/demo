@@ -1,0 +1,279 @@
+body {
+    background-color: #F3F5F7;
+}
+
+.userLogin {
+    width: 100%;
+    min-width: 300px;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    background: #f9f9f9;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+header i {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url("img/iconLogin.png") no-repeat 0 -62px;
+    background-size: 22px;
+    position: absolute;
+    left: 12px;
+    top: 10px;
+}
+
+header span {
+    font-size: 17px;
+    color: #616161;
+    line-height: 45px;
+    font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+}
+
+section .zhuTi {
+    width: 100%;
+    padding: 10px 15px 20px;
+}
+
+section .zhuTi form {
+    position: relative;
+}
+
+section .zhuTi form input {
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    padding: 0 10px;
+    line-height: 43px;
+    border-color: #d7d7d7;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-top: 14px;
+}
+
+section .zhuTi form .myInput {
+    position: relative;
+}
+
+section .zhuTi form .i1 {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url("img/iconLogin.png") no-repeat 0 0;
+    background-size: 22px;
+    position: absolute;
+    right: 12px;
+    top: 25px;
+}
+
+section .zhuTi form .i3 {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url("img/iconLogin.png") no-repeat 0 0;
+    background-size: 22px;
+    position: absolute;
+    right: 96px;
+    top: 27px;
+}
+
+section .zhuTi form .i4 {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url("img/iconLogin.png") no-repeat 0 0;
+    background-size: 22px;
+    position: absolute;
+    right: 96px;
+    top: 27px;
+}
+
+section .zhuTi form .myBtn {
+    width: 52px;
+    height: 32px;
+    padding: 3px;
+    border-radius: 16px;
+    border: 1px solid #e3e5e9;
+    background-clip: padding-box; /*�������ü����ڱ߾��*/
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 80px;
+    right: 5px;
+}
+
+section .zhuTi form .myBtn .abc {
+    font-size: 12px;
+}
+
+section .zhuTi form .myBtn p {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #e3e5e9;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    background-color: #FFFFFF;
+}
+
+section .zhuTi form .i2 {
+    display: inline-block;
+    width: 77px;
+    height: 28px;
+    background: url("img/authcode.png") no-repeat 0 0;
+    background-size: 77px;
+    position: absolute;
+    top: 141px;
+    right: 1px;
+    border-left: 1px solid #e3e5e9;
+}
+
+section .zhuTi .dengLu {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+section .zhuTi .dengLu .dLu {
+    padding: 0;
+    margin-top: 47px;
+    width: 100%;
+    outline: none;
+    background-color: #eeeeee;
+    border: none;
+    font-size: 14px;
+    color: #848689;
+    line-height: 45px;
+}
+
+section .zhuTi .mdl {
+    width: 100%;
+    font-size: 14px;
+    color: #616161;
+    line-height: 15px;
+    margin-bottom: 22px;
+}
+
+section .zhuTi .mdl .i6 {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url("img/iconLogin.png") no-repeat 0 -105px;
+    background-size: 22px;
+    position: relative;
+    left: 0;
+    top: 5px;
+    margin-right: 5px;
+}
+
+section .zhuTi .mdl .i5 {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url("img/iconLogin.png") no-repeat 0 -84px;
+    background-size: 22px;
+    position: relative;
+    left: 0;
+    top: 5px;
+    margin-right: 5px;
+}
+
+section .zhuTi .mmzc {
+    width: 100%;
+    color: #333333;
+}
+section .zhuTi .mmzc a{
+	color: #333;
+}
+section .zhuTi .mmzc .zmm {
+    float: left;
+}
+section .zhuTi .mmzc .zmm:hover,section .zhuTi .mmzc .zhc:hover{
+	cursor: pointer;
+}
+section .zhuTi .mmzc .zmm i {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url("img/iconLogin.png") no-repeat 0 -22px;
+    background-size: 22px;
+    position: relative;
+    left: 0;
+    top: 5px;
+}
+
+section .zhuTi .mmzc .zhc {
+    float: right;
+}
+
+section .zhuTi .mmzc .zhc i {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url("img/iconLogin.png") no-repeat 0 -42px;
+    background-size: 22px;
+    position: relative;
+    left: 0;
+    top: 5px;
+}
+
+section .zhuTi .qtdl {
+    width: 100%;
+    margin-top: 45px;
+    color: #616161;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 21px;
+}
+
+@media screen and (min-width: 550px) {
+    section .zhuTi .qtdl span:before, section .zhuTi .qtdl span:after {
+        display: inline-block;
+        content: "";
+        width: 40%;
+        height: 0;
+        border-top: 0.5px solid #d7d7d7;
+        border-bottom: 0.5px solid #d7d7d7;
+        margin-right: 5px;
+        position: relative;
+        top: -5px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    section .zhuTi .qtdl span:before, section .zhuTi .qtdl span:after {
+        display: inline-block;
+        content: "";
+        width: 30%;
+        height: 0;
+        border-top: 0.5px solid #d7d7d7;
+        border-bottom: 0.5px solid #d7d7d7;
+        margin-right: 5px;
+        position: relative;
+        top: -5px;
+    }
+}
+
+section .zhuTi .qtdl span:after {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+section .zhuTi .qq {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #616161;
+}
+
+section .zhuTi .qq i {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url("img/iconLogin.png") no-repeat 0 -128px;
+    background-size: 22px;
+}
+

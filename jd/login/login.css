@@ -1,0 +1,197 @@
+body{
+    background-color: #F4F4F4;
+    min-width: 300px;
+    width: 100%;
+}
+.login{
+    width: 100%;
+}
+header{
+    position: relative;
+    width: 100%;
+    background:url("img/my_bg.jpg")no-repeat;
+    background-size: cover;
+    padding-top: 24px;
+    min-height: 91px;
+}
+header img{
+    width: 69px;
+    height: 69px;
+    margin: 0 16px;
+}
+header a{
+    position: absolute;
+    top: 43px;
+    display: inline-block;
+    font-size: 15px;
+    color: #47b34f;
+    border: 1px solid #47b34f;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    padding: 0 10px;
+    line-height: 27px;
+    letter-spacing: 1px;
+}
+section{
+    width: 100%;
+    min-height: 620px;
+}
+.wallet{
+    /*width: 100%;*/
+    background-color: #FFFFFF;
+    padding-left:15px;
+    margin-bottom: 10px;
+}
+.wallet .top{
+    line-height: 44px;
+    position: relative;
+}
+.wallet .top i{
+    display: inline-block;
+    width: 26px;
+    height: 44px;
+    background: url("img/pdj_2_sprites.png") no-repeat -183px -1px;
+    background-size: 320px auto;
+    vertical-align: -16px;
+}
+.wallet .top span{
+    font-size: 1.17em;
+}
+.wallet .top:after{
+    content: "";
+    display: block;
+    width: 44px;
+    height: 44px;
+    background: url("img/pdj_2_sprites.png") no-repeat -80px -264px;
+    background-size: 320px auto;
+    position: absolute;
+    right: 5px;
+    top: 3px;
+}
+.wallet .bottom{
+    border-top: 1px dashed #e8e8e8;
+    display: -webkit-box;
+}
+.wallet .bottom a{
+    font-size: 15px;
+    color: #555555;
+    padding: 10px 0;
+    -webkit-box-flex: 1;
+    display: block;
+}
+.wallet .bottom a i,.wallet .bottom a span{
+    display: block;
+    text-align: center;
+}
+.gldZ{
+    /*width: 100%;*/
+    background-color: #FFFFFF;
+    padding-left:15px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.gldZ i{
+    display: inline-block;
+    width: 26px;
+    height: 44px;
+    background: url("img/pdj_2_sprites.png") no-repeat -183px -44px;
+    background-size: 320px auto;
+    vertical-align: -16px;
+}
+.gldZ span{
+    font-size: 14px;
+}
+.gldZ:after{
+    content: "";
+    display: block;
+    width: 44px;
+    height: 44px;
+    background: url("img/pdj_2_sprites.png") no-repeat -80px -264px;
+    background-size: 320px auto;
+    position: absolute;
+    right: 5px;
+    top: 3px;
+}
+.tellP{
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.tellP i{
+    background: url("img/pdj_2_sprites.png") no-repeat -183px -87px;
+    background-size: 320px auto;
+}
+.tellP p{
+    border-top: 1px solid #e8e8e8;
+}
+.service{
+    margin-top: 10px;
+}
+.service i{
+    background: url("img/pdj_2_sprites.png") no-repeat -183px -131px;
+    background-size: 320px auto;
+}
+.service p{
+    border: none;
+}
+.download i{
+    background: url("img/pdj_2_sprites.png") no-repeat -95px -131px;
+    background-size: 320px auto;
+}
+.addZb i{
+    background: url("img/pdj_2_sprites.png") no-repeat -183px -175px;
+    background-size: 320px auto;
+}
+.yqFri i{
+    background: url("img/invite.png") no-repeat 6px 14px;
+    background-size: 17px auto;
+}
+.user i{
+    background: url("img/research.png") no-repeat 6px 13px;
+    background-size: 17px auto;
+}
+.us i{
+    background: url("img/pdj_2_sprites.png") no-repeat -183px -220px;
+    background-size: 320px auto;
+}
+footer{
+    width: 100%;
+    background-color: #ffffff;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    text-align: center;
+    border-top: 1px solid #d9d9d9;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+footer a{
+    height: 20px;
+    -webkit-box-flex: 1;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 17px;
+    padding-top: 30px;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+footer .shy{
+    background: url("img/nav2.png") no-repeat 50% -223px;
+    background-size: 20px;
+}
+footer .fey{
+    background: url("img/nav2.png") no-repeat 50% -267px;
+    background-size: 20px;
+}
+footer .gwc{
+    background: url("img/nav2.png") no-repeat 50% -314px;
+    background-size: 20px;
+}
+footer .did{
+    background: url("img/nav2.png") no-repeat 50% -360px;
+    background-size: 20px;
+}
+footer .mine{
+    background: url("img/nav2.png") no-repeat 50% -177px;
+    background-size: 20px;
+}
