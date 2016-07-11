@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+b {
+    font-size: 18px;
+    color: darkorchid;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #eee9f7;
+    /*position: fixed;*/
+    height: 70px;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+
+.head {
+    height: 69px;
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 640px;
+}
+
+.logo {
+    background-color: darkorchid;
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+    margin-left: 10px;
+    border-radius: 12px;
+}
+
+.ft {
+    float: left;
+}
+
+.logo img {
+    display: block;
+    width: 48px;
+    margin-left: 5px;
+    margin-top: -2px;
+}
+
+.title {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.title-dcs {
+    font-size: 15px;
+    line-height: 1.1em;
+}
+
+.title-download {
+    font-size: 8px;
+    margin-top: 3px;
+    color: darkgrey;
+}
+
+.download {
+    float: right;
+}
+
+.download p {
+    background-color: darkorchid;
+    color: white;
+    padding: 5px 10px;
+    font-size: 13px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.comments {
+    margin-top: 10px;
+}
+
+.c-info {
+    height: 50px;
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 640px;
+}
+
+.c-info-Headportrait img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.c-info-name {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.c-info-name-nicheng {
+    color: #c79bef;
+}
+
+.c-info-name-location {
+    ont-size: 12px;
+    color: darkgrey;
+}
+
+.c-info-numimg {
+    float: right;
+    margin-top: 10px;
+}
+
+.c-info-numimg img {
+    display: inline;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.c-info-num {
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: 15px;
+    color: darkgrey;
+}
+
+.c-message {
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 640px;
+}
+
+.c-message p {
+    margin-left: 45px;
+    padding: 0 20px;
+}
+
+.c-message img {
+    margin-top: 5px;
+    width: 90%;
+}
+
+.usercommentcontent {
+    margin-left: 55px;
+}
+
+.useraudio {
+    margin-left: 65px;
+}
+
+.theline {
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 640px;
+}
+
+.theline img {
+    width: 20px;
+}
+
+.theline .fgx {
+    width: 95%;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.pl {
+    margin-top: 5px;
+    margin-left: 10px;
+    border-left: 2px solid darkorchid;
+    padding-left: 5px;
+    margin-bottom: 20px;
+}
+
+.usercomments {
+    height: 50px;
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 640px;
+}
+
+.usercomments-Headportrait img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.usercomments-name {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.usercomments-name-nicheng {
+    color: #c79bef;
+}
+
+.usercomments-name-location {
+    font-size: 12px;
+    color: darkgrey;
+}
+
+.usercomments-num {
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: 15px;
+    color: darkgrey;
+}
+
+.usercomments-numimg {
+    float: right;
+    margin-top: 10px;
+}
+
+.usercomments-numimg img {
+    display: inline;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.usercomments-message {
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 640px;
+}
+
+.usercomments-message p {
+    margin-left: 65px;
+    margin-right: 10px;
+    word-wrap: break-word;
+}
+
+.usercomments-message img {
+    margin-top: 5px;
+    width: 80px;
+    height: 80px;
+}
+
+.usercomments-message .fgx {
+    height: 1px;
+    width: 95%;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.footer {
+    background-color: #eee9f7;
+    height: 35px;
+    width: 100%;
+    text-align: center;
+}
+
+.footer p {
+    color: white;
+    margin-top: 10px;
+    padding-top: 5px;
+    color: darkgrey;
+}
+
+.usercomments-message .emoji {
+    height: 20px;
+    width: 20px;
+}
+
+.text .emoji {
+    height: 20px;
+    width: 20px;
+}
+
+.usercomments-null {
+    margin-left: 15px;
+}
+
+.useraudio {
+}
+
+.useraudio .audiobg {
+    width: 150px;
+    height: 40px;
+}
+
+.useraudio .audioimg {
+    position: absolute;
+    margin-left: -140px;
+    margin-top: 14px;
+    height: 23px;
+    width: auto;
+}
+
+.line {
+    position: absolute;
+    width: 100%;
+}
+
+.useraudio .audiotime {
+    display: inline-block;
+    position: absolute;
+    margin-left: 125px;
+    margin-top: 15px;
+}
