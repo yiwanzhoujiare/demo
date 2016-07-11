@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>提示框</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.8em;
+        }
+        .container {
+            width: 500px;
+            padding: 20px;
+            background-color: honeydew;
+            border: 3px solid lightseagreen;
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-left: 60px;
+            position: relative;      /*提示框相对.container绝对定位*/
+        }
+        .tooltip {
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .tooltip-box{
+            background-color: #ffffff;
+            line-height: 30px;
+            height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: lightblue;
+            border: 1px solid lightblue;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="container">
+    <h2>环球时报</h2>
+    <p>
+        【环球时报综合报道】对于半世纪前发生的排华屠杀事件
+        ，<a href="javascript:;" class="tooltip" id="tooltip1">印尼国</a>内呼吁打开禁忌话题，
+        直面真相的呼声不断。25日，
+        印尼总统佐科下令在全国各地寻找遇难者的万人塚。据印尼
+        《雅加达邮报》26日报道，佐科当天召见政治、法律和安全统
+        筹部部长<a href="javascript:;" class="tooltip" id="tooltip2">鲁胡特</a>。后者在进行媒体通报时说，
+        总统指示“要是
+        真有大屠杀惨案的万人塚，政府部门就要找出来”。
+    </p>
+</div>
+    <script>
+        /*
+        * 动态创建提示框步骤：
+        * 1.创建显示提示框并且插入其父级元素的函数：（函数参数：父级，id，内容，宽度）
+        *   (1)if没有提示框，则创建提示框且不显示；！！if条件阻止鼠标多次移入触发事件的元素时反复打印
+        *      a.创建提示框;
+        *      b.设置提示框的属性（类名、id名,内容）;
+        *      c.创建提示框相对于其父级的偏移量(变量)（！！必须先于其样式的绝对定位设置，否则提示框定位出错）;
+        *      d.设置提示框的样式(绝对定位，给偏移量赋值);
+        *      e.将提示框添加到其父级中;
+        *      f.对提示框的父级添加DOM2级“鼠标移出触发事件:'提示框不显示'"的处理程序.
+        *   (2)else有了提示框，则鼠标移入触发事件的元素，提示框显示出来
+        *2.事件委托(给父级加事件，此事件可以到子元素)
+        *  (1)获取提示框的父级元素;
+        *  (2)对提示框的父级元素添加DOM2级“鼠标移入触发事件:'提示框显示出来'"的处理程序;
+        *     a.创建触发了事件的元素本身，指向自己（谁触发了事件，_target就代表谁）;
+        *     b.if条件判断：如果触发事件的元素是提示框，则：
+        *          i.创建提示框变量声明;
+        *          ii. switch（判断条件：触发事件的提示框的id名）
+        *             依据提示框的不同类名，给不同的提示框的属性分别动态赋值：
+        *               case 类名j：如果触发事件的元素的类名是tooltip（两个触发事件a标签的共用类名），则给创建的提示框函数的参数赋值
+        *
+        *
+        * */
+
+        //创建显示提示框并且插入其父级元素的函数
+        function showToolTip(parent,id,html,width) {
+            //判断条件：如果没有提示框，则创建提示框
+            if(document.getElementById(id) == null) {  // ！！if条件阻止鼠标多次移入触发事件的元素时反复打印
+                //创建提示框
+                var toolTipBox= document.createElement("div");
+                //设置提示框的属性（类名、id名,内容）
+                toolTipBox.className = "tooltip-box";
+                toolTipBox.id = id;
+                toolTipBox.innerHTML = html;
+                //创建提示框（绝对定位）相对于其父级(相对定位)的偏移量（！！必须先于其绝对定位设置，否则提示框定位出错）
+                var toolTipLeft = parent.offsetLeft;   //创建提示框相对于其父级的左偏移变量，！与定位有关
+                var toolTipTop = parent.offsetTop-35;  //创建提示框相对于其父级的上偏移变量（-35减去35，这是数字类型，不要加单位，单位在下面获取），与定位有关
+                //设置提示框的样式
+                toolTipBox.style.position = "absolute";    //提示框绝对定位
+                toolTipBox.style.left = toolTipLeft + "px"; //提示框相对其父级向左偏移+px
+                toolTipBox.style.top = toolTipTop + "px";   //提示框相对其父级向上偏移+px
+                toolTipBox.style.width = width+"px";        //提示框宽度+px
+                //将提示框添加到其父级中
+                parent.appendChild(toolTipBox);
+                //对提示框的父级添加DOM2级“鼠标移出触发事件:'提示框不显示'"的处理程序：
+                parent.addEventListener("mouseout",function(){
+                    toolTipBox.style.display = "none";
+                },false);
+
+            }else{//判断条件：有了提示框，提示框显示出来
+                document.getElementById(id).style.display = "block";
+            }
+        }
+
+        //事件委托  :给父级加事件，此事件可以到子元素
+        //获取提示框的父级.container元素
+        var container = document.getElementById("container");
+        //对提示框的父级container元素添加DOM2级“鼠标移入触发事件:'提示框显示出来'"的处理程序：
+        container.addEventListener("mouseover",function(e){
+            var _target = e.target;   //创建触发了事件的元素本身，指向自己（谁触发了事件，_target就代表谁）
+//        console.log(_target);
+            if(_target.className == "tooltip"){   //如果触发事件的元素的类名是tooltip（两个触发事件a标签的共用类名），则：
+                var _html;  //给提示框声明一个内容
+                var _id;   //给提示框声明一个id属性
+                var _width; //给提示框声明一个宽度
+                //依据提示框的不同类名，给不同的提示框的属性分别动态赋值
+                switch (_target.id){  //条件：触发事件的提示框的id名
+                    case "tooltip1":  //触发事件的提示框的id名为tooltip1，则：
+                        _id = "t1";     //给提示框id属性赋值t1
+                        _html = "我是印尼国";  //给提示框内容赋值：我是印尼国
+                        _width = 100;  //给提示框宽度赋值：100
+                        break;
+                    case "tooltip2": //触发事件的提示框的id名为tooltip2，则：
+                        _id = "t2";  //给提示框id属性赋值t2
+                        _html = "我是鲁胡特";  //给提示框内容赋值：我是我是鲁胡特
+                        _width = 100;      //给提示框宽度赋值：100
+                        break;
+                }
+                showToolTip(_target,_id,_html,_width);  //调用上面的showToolTip()函数
+            }
+
+        },false);
+
+    </script>
+</body>
+</html>
