@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        body {
+            width: 100%;
+            background-color: #E1E1E1;
+        }
+        .container {
+            width: auto;
+            min-width: 640px;
+            margin-top: 20px;
+            margin-left: 50px;
+            margin-right: 20px;
+            background-color: #fff;
+        }
+        .nav {
+            width: 100%;
+            min-width: 640px;
+            background-color: #F6F6F6;
+        }
+        .nav-inner {
+            width: 90%;
+            list-style: none;
+            margin-left: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .nav-inner li {
+            display: inline-block;
+        }
+        .nav-inner li a {
+            text-decoration: none;
+            color: #81BD04;
+            font-size: 20px;
+            display: inline-block;
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin-right: 30px;
+        }
+        .navlia0 {
+            color: #fff!important;  /*优先级不够用!important*/
+            background-color: #81BD04;
+            border-radius: 4px;
+        }
+        .content {
+            width: 100%;
+        }
+        .mes {
+            width: 100%;
+            margin: 10px 0;
+            height: 40px;
+            border-bottom: 1px solid #F7F7F7;
+            position: relative;
+        }
+        .line {
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+        }
+        .tx {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            margin: 0 10px;
+        }
+        .num,.tag {
+            width: 71px;
+            margin-right: 10px;
+        }
+        .tag {
+            width: 30px;
+            height: 25px;
+            line-height: 25px;
+            background-color: #81bd04;
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+        .tag4 {
+            color: #bababa!important;
+            background-color: #e5e5e5;
+        }
+        .tag6 {
+            color: #bababa!important;
+            background-color: #e5e5e5;
+        }
+        .tag7 {
+            color: #bababa!important;
+            background-color: #e5e5e5;
+        }
+        .tag8 {
+            color: #bababa!important;
+            background-color: #e5e5e5;
+        }
+        .tag9 {
+            color: #bababa!important;
+            background-color: #e5e5e5;
+        }
+        .tag10 {
+            color: #bababa!important;
+            background-color: #e5e5e5;
+        }
+
+        .xtx {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            position: absolute;
+            right: 65px;
+            top: 5px;
+            line-height: 40px;
+        }
+        .time {
+            color: #c6cacd;
+            font-size: 12px;
+            position: absolute;
+            right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+        //创建函数——调用创建元素document.createElement（）
+        function CE(x) {
+            return document.createElement(x);
+        }
+        //创建外层容器div.container
+        var divCon = CE("div");
+        divCon.className = "container";
+
+        //将外层容器div.container放入body中
+        document.body.appendChild(divCon);
+
+        //创建顶部导航div.nav
+        var divNav = CE("div");
+        divNav.className = "nav";
+        //将顶部导航div.nav放入外层容器div.container中
+        divCon.appendChild(divNav);
+
+        //创建ul.nav-inner标签
+        var navUl = CE("ul");
+        navUl.className = "nav-inner";
+        //将ul.nav-inner标签放入顶部导航div.nav中
+        divNav.appendChild(navUl);
+
+        //for循环创建li.navli+j标签
+        var arr = ["全部","精华","分享","问答","招聘"]
+        for (var j = 0;j<5;j++) {
+            var navLi = CE("li");
+            navLi.className= "navli"+j;
+            //将li标签放入ul.nav-inner中
+            navUl.appendChild(navLi);
+            //创建a标签
+            var navLiA = CE("a");
+            navLiA.className= "navlia"+j;
+            //将a标签放入li.navli+j标签中
+            navLi.appendChild(navLiA);
+            navLiA.href = "#";
+            //创建a标签中的文本
+            var aText = document.createTextNode(arr[j]);     //在数组中创建文本，由下标获取不同文本值
+            aText.className = "atext"+j;
+            //将a标签中的文本放入a标签中
+            navLiA.appendChild(aText);
+//            navLiA.appendChild(aText[j]);
+        }
+
+        //创建内容层div.content
+        var divContent = CE("div");
+        divContent.className = "content";
+        //将内容层div.content放入外层容器div.container中
+        divCon.appendChild(divContent);
+
+        //for循环 创建内容信息div.mes
+        //创建动态数据 JSON格式 对象类型
+        var conMes = {
+                "arrImgTit" : ["imgs/dog0.jpg","imgs/dog1.jpg","imgs/dog2.jpg","imgs/dog3.jpg","imgs/dog4.jpg","imgs/dog5.jpg","imgs/dog6.jpg","imgs/dog7.jpg","imgs/dog8.jpg","imgs/dog9.jpg","imgs/dog10.jpg"],
+                "arrNum" : ["36/3158","39/3982","107/36996","37/13785","14/418","20/1386","3/88","12/205","0/27","0/57","9/523"],
+                "arrTag" : ["置顶","置顶","置顶","置顶","分享","置顶","问答","问答","问答","招聘","招聘"],
+                "arrP" : [ "cnode社区也切换到let's encrypt了","【深圳】NodeParty 2016.04.09总结 ","国内Nodejs 2015汇总","展望Nodejs 2016和新年祝福","基础JavaScript装逼指南（转）","分享个基于Nodejs + React的博客系统","关于forever、nohup、pm2在服务器后台运行的问题","【小白提问】有木有人用过富文本控件比如\"Simditor\"","database names cannot contain the character\'\'错误","【杭州北京】阿里云大数据平台招人啦！","【魅族珠海】高薪招聘前端工程师"],
+                "arrImgRight" : ["imgs/dog0.jpg","imgs/dog1.jpg","imgs/dog2.jpg","imgs/dog3.jpg","imgs/dog4.jpg","imgs/dog5.jpg","imgs/dog6.jpg","imgs/dog7.jpg","imgs/dog8.jpg","imgs/dog9.jpg","imgs/dog10.jpg"],
+                "arrTime" : ["1小时前","2天前","15分钟前","4小时前","1天前","35分钟前","5小时前","7天前","45分钟前","1天前","5分钟前"]
+        };
+        var idvMes = document.getElementsByClassName("mes");  //获取内容信息div.mes容器
+       function Mes() {
+           for (var i = 0; i <conMes.arrImgTit.length;i++) {
+               //创建内容信息div.mes
+               var divMes = CE("div");
+               divMes.className = "mes"+ i+" mes";
+               //将创建内容信息div.mes放入内容层div.content中
+               divContent.appendChild(divMes);
+
+               //创建信息的头像img.Tit
+               var imgTit = CE("img");
+               imgTit.className = "imgtit"+i+"  line"+ "  tx";
+               //将信息的头像img.imgTit放入内容信息div.mes中
+               divMes.appendChild(imgTit);
+               //创建头像img.Tit的src属性
+               imgTit.src = conMes.arrImgTit[i];
+
+               //创建头像右侧文本span.num
+               var spanNum = CE("span");
+               spanNum.className = "num"+i+"  line"+ "  num";
+               //将头像右侧文本span.num放入内容信息div.mes中
+               divMes.appendChild(spanNum);
+               //创建文本spanMunText
+               var spanNumText = document.createTextNode(conMes.arrNum[i]);
+               //将spanMunText放入span.num标签中
+               spanNum.appendChild(spanNumText);
+
+               //创建置顶、问答标签span.tag
+               var spanTag = CE("span");
+               spanTag.className = "tag"+i+"  line"+"  tag";
+               //将置顶、问答标签span.tag放入内容信息div.mes中
+               divMes.appendChild(spanTag);
+               //创建文本spanTagText
+               var spanTagText = document.createTextNode(conMes.arrTag[i]);
+               //将spanTagText放入span.tag标签中
+               spanTag.appendChild(spanTagText);
+
+               //创建内容文字p.words
+               var pWords = CE("p");
+               pWords.className = "words"+i+"  line";
+               //将容文字p.words放入内容信息div.mes中
+               divMes.appendChild(pWords);
+               //创建文本pWordsText
+               var pWordsText = document.createTextNode(conMes.arrP[i]);
+               //将pWordsText放入pWords标签中
+               pWords.appendChild(pWordsText);
+
+               //创建右侧图像图标img.right
+               var imgRight = CE("img");
+               imgRight.className = "imgright"+i+"  line"+"  xtx";
+               imgRight.src = conMes.arrImgRight[i];
+               //将信息的头像img.imgright放入内容信息div.mes中
+               divMes.appendChild(imgRight);
+
+               //创建右侧文本span.time
+               var spanTime = CE("span");
+               spanTime.className = "time"+i+"  line" + "  time";
+               //将头像右侧文本span.num放入内容信息div.mes中
+               divMes.appendChild(spanTime);
+               //创建文本spanMunText
+               var spanTimeText = document.createTextNode(conMes.arrTime[i]);
+               //将spanTimeText放入span.time标签中
+               spanTime.appendChild(spanTimeText);
+           }
+       }
+        Mes();
+        console.log(document);
+    </script>
+</body>
+</html>
