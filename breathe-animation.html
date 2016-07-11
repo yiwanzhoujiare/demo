@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: lavender;
+        }
+
+        .breath{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: lightseagreen;
+            /*start 定义动画——名字 持续时间 延迟时间 （两个时间顺序不能颠倒）动画过渡类型  动画循环次数*/
+            animation: breathe 1500ms linear infinite;
+            -webkit-animation: breathe 1500ms linear infinite;
+            /*end 定义动画——名字 持续时间 延迟时间 （两个时间顺序不能颠倒）动画过渡类型  动画循环次数*/
+            display: block;
+            margin: 100px auto;
+            color: #fff;
+            font-weight: bold;
+        }
+        /*start @keyframes规则创建动画——指定一个CSS样式和动画将逐步从目前的样式更改为新的样式，要绑定选择器 */
+        @keyframes breathe {
+            0%{
+                /*transform 变换——包括：*/
+                transform: scale(1);
+                -webkit-transform: scale(1);
+                opacity: 0.7;
+            }
+            50%{
+                transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+                opacity: 1;
+            }
+            100%{
+                transform: scale(1);
+                -webkit-transform: scale(1);
+                opacity: 0.7;
+            }
+        }
+        @-webkit-keyframes breathe {
+            0%{
+                transform: scale(1);
+                -webkit-transform: scale(1);
+                opacity: 0.5;
+            }
+            50%{
+                transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+                opacity: 1;
+            }
+            100%{
+                transform: scale(1);
+                -webkit-transform: scale(1);
+                opacity: 0.5;
+            }
+        }
+        /*end @keyframes规则创建动画——指定一个CSS样式和动画将逐步从目前的样式更改为新的样式，要绑定选择器 */
+        .fixed {
+            width: 200px;
+            height: 200px;
+            background-color: lightcoral;
+            opacity: .5;
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+        .fixed p {
+            line-height: 100%;
+        }
+        .back-to-top {
+            padding: 5px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            position: fixed;
+            left: 10px;
+            bottom: 20px;
+            text-align: center;
+        }
+        .back-to-top a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: lightsalmon;
+            opacity: .7;
+            line-height: 35px;
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+     <div class="container">
+         <div class="breath">
+
+         </div>
+         <div class="fixed">
+             <p>
+                 2D-breathe,加内核<br/>
+                 animation定义动画-名字,持续时间,延迟时间,动画过渡类型,动画循环次数<br/>
+                 @keyframes规则创建动画——<br/>
+                 指定一个CSS样式和动画将逐步从目前的样式更改为新的样式，要绑定选择器<br/>
+             </p>
+         </div>
+         <div class="back-to-top">
+             <a href="#">TOP</a>
+         </div>
+     </div>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+</body>
+</html>
