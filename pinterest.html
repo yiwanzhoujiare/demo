@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>瀑布流</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #eee;
+        }
+
+        .clearFix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .pinter {
+            float: left;
+            padding: 10px;
+        }
+
+        .pin-inner {
+            /*padding: 5px;*/
+            box-shadow: 0 0 5px #555;
+            background-color: #fff;
+        }
+
+        .pin-inner img {
+            width: 220px;
+            height: auto;
+            /*box-shadow: 0 0 10px #555;*/
+        }
+        .pin-inner p {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container clearFix" id="container">
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i11.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i2.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i5.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i25.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i5.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i21.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i20.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i9.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i19.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i10.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i11.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i2.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i13.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i17.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i15.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+    <div class="pinter">
+        <div class="pin-inner">
+            <img src="images/i26.jpg">
+            <p class="ptext">吼吼</p>
+        </div>
+    </div>
+</div>
+<script>
+    //创建并且插入父级元素的函数  返回值为新创建的元素
+    function getEle(parent, ele, myClass) {  //parent 为创建的子元素的父级 //ele为创建的子元素 //myclass为子元素的属性名
+        var element = document.createElement(ele);   //新建一个子元素
+        if (myClass !== null) {               //如果子元素的类名不为空（有类名），则：
+            element.className = myClass;   //子元素类名为myclass
+        }
+        parent.appendChild(element);  //将创建的子元素添加到父元素中
+        return element;   //！！！返回子元素
+    }
+    window.onload = function () {
+        var dataImg = {
+          "data" : [
+              {src : "i17.jpg","content" : "哈哈"},
+              {src : "i18.jpg","content" : "哈哈"},
+              {src : "i19.jpg","content" : "哈哈"},
+              {src : "i20.jpg","content" : "哈哈"},
+              {src : "i21.jpg","content" : "哈哈"},
+              {src : "i22.jpg","content" : "哈哈"},
+              {src : "i23.jpg","content" : "哈哈"},
+              {src : "i24.jpg","content" : "哈哈"},
+              {src : "i25.jpg","content" : "哈哈"},
+              {src : "i26.jpg","content" : "哈哈"},
+              {src : "i18.jpg","content" : "哈哈"},
+              {src : "i15.jpg","content" : "哈哈"},
+              {src : "i10.jpg","content" : "哈哈"},
+              {src : "i11.jpg","content" : "哈哈"},
+              {src : "i1.jpg","content" : "哈哈"}
+          ]
+        };
+        pinter1(); //函数提升
+        window.onscroll = function() {
+            if (bjpd()) {
+                //动态创建每一个元素
+                var container = document.getElementById("container");
+                for(var i = 0;i<dataImg.data.length;i++) {
+                    var pinter = getEle(container,"div","pinter");
+                    var pin_inner = getEle(pinter,"div","pin-inner");
+                    var pin_img = getEle(pin_inner,"img","img");
+                    pin_img.src = "images/"+dataImg.data[i].src;
+                    var pText = getEle(pin_inner,"p","ptext");
+                    pText.innerHTML = dataImg.data[i].content;
+
+                }
+               pinter1();
+            }
+        }
+    };
+    //布局的函数
+    function pinter1() {
+        //获取一个承载所有图片的容器(父级对象)
+        var container = document.getElementById("container");
+        //创建一个数组，承载每个图片的容器(pinter的盒子)
+        var objPinter = container.getElementsByTagName("*");//所有的子元素
+        //获取需要的子容器
+        var pinS = []; //里面储存的是div
+        for (var i = 0; i < objPinter.length; i++) {
+            //只放pinter进来
+            if (objPinter[i].className == "pinter") {
+                pinS.push(objPinter[i]);
+            }
+        }
+        //获取图片的宽度
+        var pinImgW = pinS[0].offsetWidth;
+        //获取每行图片数量
+        var num = Math.floor(document.documentElement.clientWidth / pinImgW);
+        //当前图片多宽，我就设置当前的整体父级容器的宽度
+        container.style.cssText = "width:" + pinImgW * num + "px;margin:0 auto;";
+        //还要创建一个数组，只存放第一排的那些图片
+        var pinArr = [];
+        for (var j = 0; j < pinS.length; j++) {
+            var pinH = pinS[j].offsetHeight;
+            if (j < num) {  //第一排
+                pinArr[j] = pinH;  //等于放入数组中
+            } else {
+                //获取最小高度的那一个
+                var minH = Math.min.apply(null, pinArr);
+                //获取下标
+                var minHIndex = 0;
+                //var minHIndex = pinArr.indexOf(minH);
+                for (var m = 0; m < pinArr.length; m++) {
+                    if (pinArr[m] == minH) {
+                        minHIndex = m;
+                    }
+                }
+                //pinS[j] = 第二排的第一张图片
+                pinS[j].style.position = "absolute";
+                pinS[j].style.left = pinS[minHIndex].offsetLeft + "px";
+                pinS[j].style.top = minH + "px";
+                //重新计算整体的高度 (当前一排的高度)
+                pinArr[minHIndex] += pinS[j].offsetHeight;
+            }
+        }
+        console.log(pinArr);
+    }
+    function bjpd() {
+        //获取一个承载所有图片的容器(父级对象)
+        var container = document.getElementById("container");
+        //创建一个数组，承载每个图片的容器(pinter的盒子)
+        var objPinter = container.getElementsByTagName("*");//所有的子元素
+        //获取需要的子容器
+        var pinS = []; //里面储存的是div
+        for (var i = 0; i < objPinter.length; i++) {
+            //只放pinter进来
+            if (objPinter[i].className == "pinter") {
+                pinS.push(objPinter[i]);
+            }
+        }
+        //获取最后一张图片
+        var lastPinHeight = pinS[pinS.length - 1].offsetTop;
+        //获取当前页面的高度
+        var pageHeight = document.documentElement.clientHeight;
+        //获取滚动的高度
+        var scrollHeight = document.documentElement.scrollTop || document.body.scrollTop;
+        return (pageHeight + scrollHeight) > lastPinHeight?true:false;
+    }
+
+</script>
+</body>
+</html>
